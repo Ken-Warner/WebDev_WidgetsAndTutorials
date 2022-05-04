@@ -1,15 +1,6 @@
 body {
     padding: 0;
     margin: 0;
-}
-
-.flex-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 1em;
-    margin: 0px;
-    padding: 10px;
 
     /*some custom properties for the flex container and items*/
     --dark-primary-color: #303F9F;
@@ -20,6 +11,15 @@ body {
     --primary-text-color: #212121;
     --secondary-text-color: #757575;
     --divider-color: #BDBDBD;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1em;
+    margin: 0px;
+    padding: 10px;
 
     background: var(--light-primary-color);
 }
@@ -71,6 +71,10 @@ body {
 [data-code-css],
 [data-code-js] {
     display: none;
+}
+
+#modal-window {
+    display: none;
     position: fixed;
     top: 2em;
     left: 2em;
@@ -80,11 +84,11 @@ body {
     border: 2px solid black;
     overflow: hidden;
     z-index: 1;
-    background: var(--default-primary-color);
+    background-color: var(--default-primary-color);
     padding: 1em;
 }
 
-.close-button {
+#close-button {
     position: absolute;
     width: 2em;
     height: 2em;
@@ -97,6 +101,10 @@ body {
     background-color: var(--accent-color);
 
 }
-.close-button:hover {
+#close-button:hover {
     cursor: pointer;
+}
+
+.blur {
+    filter: blur(3px);
 }

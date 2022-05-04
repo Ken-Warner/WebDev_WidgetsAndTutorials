@@ -15,11 +15,10 @@ for (let i = 0; i < 10; i++) {
 }
 
 //add event handlers to all the close buttons
-var closeButtons = document.querySelectorAll(".close-button");
-closeButtons.forEach(button => {
-    button.addEventListener('click', (e) => {
-        e.target.parentElement.style.display = "none";
-    });
+var closeButton = document.getElementById("close-button");
+closeButton.addEventListener('click', (e) => {
+    e.target.parentElement.style.display = "none";
+    container.classList.remove('blur');
 });
 
 //All of the buttons in each container
@@ -30,24 +29,33 @@ codeButtons.forEach(button => {
     //there are different handlers for each type of button
     if (button.dataset.button == "html") {
         button.addEventListener('click', (e) => {
-            e.target.parentElement
+            let content = e.target.parentElement
                     .parentElement
-                    .querySelector('[data-code-html]')
-                    .style.display = 'block';
+                    .querySelector('[data-code-html]');
+            let window = document.getElementById('modal-window-content');
+            window.innerText = content.innerText;
+            window.parentElement.style.display = 'block';
+            container.classList.add('blur');
         });
     } else if (button.dataset.button == "css") {
         button.addEventListener('click', (e) => {
-            e.target.parentElement
+            let content = e.target.parentElement
                     .parentElement
-                    .querySelector('[data-code-css]')
-                    .style.display = 'block';
+                    .querySelector('[data-code-css]');
+            let window = document.getElementById('modal-window-content');
+            window.innerText = content.innerText;
+            window.parentElement.style.display = 'block';
+            container.classList.add('blur');
         });
     } else { //must be js
         button.addEventListener('click', (e) => {
-            e.target.parentElement
+            let content = e.target.parentElement
                     .parentElement
-                    .querySelector('[data-code-js]')
-                    .style.display = 'block';
+                    .querySelector('[data-code-js]');
+            let window = document.getElementById('modal-window-content');
+            window.innerText = content.innerText;
+            window.parentElement.style.display = 'block';
+            container.classList.add('blur');
         });
     }
 });

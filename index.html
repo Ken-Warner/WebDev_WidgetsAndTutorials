@@ -19,21 +19,33 @@
                 <button data-button="js">JS</button>
             </div>
             <div data-code-html>
-                <div class="close-button">X</div>
                 html
+                &lt;a&gt;test&lt;/a&gt;
             </div>
             <div data-code-css>
-                <div class="close-button">X</div>
                 CSS
+                .test {
+                    someting;
+                    }
             </div>
             <div data-code-js>
-                <div class="close-button">X</div>
                 js
+                var test = document.getElementById('container');
+console.log(test);
             </div>
         </div>
     </template>
     <div id="container" class="flex-container"></div>
+    <div id="modal-window">
+        <div id="close-button">X</div>
+        <div id="modal-window-content"></div>
+    </div>
+
+    
+    <textarea id="escaper"></textarea><br />
+    <button id="escaper-button">Escape</button>
 
     <script src="test.js" defer></script>
+    <script src="escaper.js" defer></script>
 </body>
 </html>
