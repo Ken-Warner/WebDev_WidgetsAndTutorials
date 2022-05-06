@@ -19,24 +19,103 @@
                 <button data-button="js">JS</button>
             </div>
             <div data-code-html>
-                html
-                &lt;a&gt;test&lt;/a&gt;
             </div>
             <div data-code-css>
-                CSS
-                .test {
-                    someting;
-                    }
             </div>
             <div data-code-js>
-                js
-                var test = document.getElementById('container');
-console.log(test);
             </div>
         </div>
     </template>
-    <div id="container" class="flex-container"></div>
+
+    <div id="container" class="flex-container">
+
+        <div class="card flex-item">
+            <h3 class="card-header">Toggle Switch</h3>
+            <div class="content toggle1">
+                <link rel="stylesheet" type="text/css" href="css/toggleSwitch.css" />
+                <input type="checkbox" id="checker" class="toggle" />
+                <label for="checker">Check me out</label>
+                <br>
+                <input type="checkbox" id="checker2" class="toggle" disabled />
+                <label for="checker2">Check me out</label>
+            </div>
+            <div class="footer-buttons">
+                <button data-button="html">HTML</button>
+                <button data-button="css">CSS</button>
+            </div>
+            <div data-code-html>
+&lt;input type="checkbox" id="checker" class="toggle" /&gt;
+&lt;label for="checker"&gt;Check me out&lt;/label&gt;
+&lt;br&gt;
+&lt;input type="checkbox" id="checker2" class="toggle" disabled /&gt;
+&lt;label for="checker2"&gt;Check me out&lt;/label&gt;
+            </div>
+            <div data-code-css>
+/*Default State*/
+input[type="checkbox"].toggle {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    position: absolute;
+}
+input[type="checkbox"].toggle + label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: black;
+    cursor: pointer;
+    user-select: none;
+}
+input[type="checkbox"].toggle + label::before {
+    background-color: hsl(350, 100%, 70%);
+    border-radius: .1em;
+    margin-right: .1em;
+    content: "";
+    width: 2em;
+    height: .85em;
+    transition: background-color 200ms ease-in-out;
+}
+input[type="checkbox"].toggle + label::after {
+    opacity: .8;
+    background-color: #ccc;
+    position: absolute;
+    border: 1px solid black;
+    border-radius: .1em;
+    top: .1em;
+    left: -.05em;
+    bottom: .1em;
+    content: "";
+    width: .9em;
+    transition: transform 200ms ease-in-out;
+}
+
+/*Checked State*/
+input[type="checkbox"].toggle:checked + label {
+    color: green;
+}
+input[type="checkbox"].toggle:checked + label::before {
+    background-color: hsl(100, 100%, 70%);
+}
+input[type="checkbox"].toggle:checked + label::after {
+    transform: translateX(1.05em);
+}
+
+/*Default State*/
+input[type="checkbox"].toggle:disabled + label {
+    color: grey;
+}
+input[type="checkbox"].toggle:disabled + label::before {
+    background-color: #777;
+}
+input[type="checkbox"].toggle:disabled + label::after {
+    background-color: #aaa;
+}
+            </div>
+        </div>
+
+    </div>
     <div id="modal-window">
+        <h3></h3>
         <div id="close-button">X</div>
         <div id="modal-window-content"></div>
     </div>
@@ -45,7 +124,7 @@ console.log(test);
     <textarea id="escaper"></textarea><br />
     <button id="escaper-button">Escape</button>
 
-    <script src="test.js" defer></script>
+    <script src="cardbox.js" defer></script>
     <script src="escaper.js" defer></script>
 </body>
 </html>

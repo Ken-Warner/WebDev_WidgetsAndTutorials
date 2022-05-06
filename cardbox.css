@@ -87,6 +87,26 @@ body {
     background-color: var(--default-primary-color);
     padding: 1em;
 }
+#modal-window-content {
+    position: absolute;
+    top: 5em;
+    right: 2em;
+    left: 2em;
+    bottom: 2em;
+    background-color: white;
+    padding: .5em;
+    margin: 0em;
+    overflow-y: auto;
+    overflow-x: auto;
+    white-space: pre;
+}
+#modal-window > h3 {
+    color: var(--text-primary-color);
+    font-size: 3em;
+    padding: 0;
+    margin: 0;
+    padding-left: .3em;
+}
 
 #close-button {
     position: absolute;

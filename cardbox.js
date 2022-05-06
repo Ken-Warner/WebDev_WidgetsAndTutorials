@@ -36,6 +36,9 @@ codeButtons.forEach(button => {
             window.innerText = content.innerText;
             window.parentElement.style.display = 'block';
             container.classList.add('blur');
+            document.getElementById('modal-window')
+                    .querySelector('h3')
+                    .innerText = "HTML";
         });
     } else if (button.dataset.button == "css") {
         button.addEventListener('click', (e) => {
@@ -46,6 +49,9 @@ codeButtons.forEach(button => {
             window.innerText = content.innerText;
             window.parentElement.style.display = 'block';
             container.classList.add('blur');
+            document.getElementById('modal-window')
+                    .querySelector('h3')
+                    .innerText = "CSS";
         });
     } else { //must be js
         button.addEventListener('click', (e) => {
@@ -56,6 +62,9 @@ codeButtons.forEach(button => {
             window.innerText = content.innerText;
             window.parentElement.style.display = 'block';
             container.classList.add('blur');
+            document.getElementById('modal-window')
+                    .querySelector('h3')
+                    .innerText = "JS";
         });
     }
 });
