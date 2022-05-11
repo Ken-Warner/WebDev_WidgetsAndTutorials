@@ -1,0 +1,32 @@
+.underline-slide-button button {
+    --background-color: #eee;
+    --border-size: 2px;
+    --accent-color: #0AF;
+
+    margin: 1rem;
+    padding: .5em 1em;
+    background-color: var(--background-color);
+    color: #000;
+    border: none;
+    outline: none;
+    position: relative;
+    cursor: pointer;
+}
+
+.underline-slide-button .underline-slide::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: var(--border-size);
+    background-color: var(--accent-color);
+
+    transform: scaleX(0);
+    transition: transform 100ms ease-in-out;
+}
+
+.underline-slide-button .underline-slide:focus::before,
+.underline-slide-button .underline-slide:hover::before {
+    transform: scaleX(1);
+}

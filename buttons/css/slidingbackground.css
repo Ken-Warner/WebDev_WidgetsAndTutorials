@@ -1,0 +1,43 @@
+.background-slide-button button {
+    --background-color: #eee;
+    --border-size: 2px;
+    --accent-color: #0AF;
+
+    margin: 1rem;
+    padding: .5em 1em;
+    background-color: var(--background-color);
+    color: #000;
+    border: none;
+    outline: none;
+    position: relative;
+    cursor: pointer;
+}
+
+.background-slide-button .background-slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-color: var(--accent-color);
+
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 300ms ease-in-out;
+}
+.background-slide-button .background-slide {
+    transition: color 300ms ease-in-out;
+    z-index: 1;
+}
+
+.background-slide-button .background-slide:hover,
+.background-slide-button .background-slide:focus {
+    color: white;
+}
+
+.background-slide-button .background-slide:hover::before,
+.background-slide-button .background-slide:focus::before {
+    transform: scaleX(1);
+}
