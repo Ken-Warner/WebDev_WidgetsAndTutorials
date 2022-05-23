@@ -1,0 +1,73 @@
+.range {
+    --range-container-width: 200px;
+    --range-maxmin-width: 50px;
+
+    width: var(--range-container-width);
+    height: 3em;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: rgb(71, 78, 203);
+    border-radius: 1em;
+    z-index: 1;
+}
+
+.range-value {
+    color: white;
+    text-align: center;
+    width: 50px;
+    position: absolute;
+    top: -30px;
+    left: calc((var(--range-container-width) / 2) - (50 / 2));
+}
+.range-value::after {
+    content: "";
+    position: absolute;
+    left: calc(50% - 25px);
+    top: -20px;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(71, 78, 203);
+    border: 3px solid white;
+    transform: rotate(45deg);
+    border-radius: 50% 50% 0 50%;
+    z-index: -1;
+}
+
+.range input {
+    width: calc(var(--range-container-width) - (var(--range-maxmin-width) * 2));
+    -webkit-appearance: none;
+    background-color: rgb(200, 200, 200);
+    height: 6px;
+    border-radius: 3px;
+}
+.range input::-webkit-slider-thumb {
+    appearance: none;
+    width: 10px;
+    height: 18px;
+    border: 1px solid white;
+    border-radius: 2px;
+    background-color: yellow;
+}
+
+.range input::before {
+    content: attr(min);
+    position: absolute;
+    width: var(--range-maxmin-width);
+    left: 10%;
+    top: 25%;
+    color: white;
+    font-size: 1.25em;
+}
+.range input::after {
+    content: attr(max);
+    position: absolute;
+    width: var(--range-maxmin-width);
+    left: calc(var(--range-container-width) - var(--range-maxmin-width));
+    top: 25%;
+    color: white;
+    font-size: 1.25em;
+}
