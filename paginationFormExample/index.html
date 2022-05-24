@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagination Form Example</title>
+
+    <link rel="stylesheet" href="css/paginationForm.css">
+    <script src="js/formManager.js" defer></script>
+</head>
+<body>
+    <div class="pagination-wrapper">
+        <div class="pagination-cell cell-complete">1</div>
+        <div class="pagination-line line-complete"></div>
+        <div class="pagination-cell">2</div>
+        <div class="pagination-line"></div>
+        <div class="pagination-cell">3</div>
+    </div>
+    <form action="" method="POST" class="multi-card-form" data-multi-card-form>
+        <div class="form-card active" data-form-card>
+            <h3 class="form-card-title" data-card-title>Personal Info</h3>
+            <div class="form-card-field">
+                <label for="name">Name</label>
+                <input type="text" name="name"  />
+            </div>
+            <div class="form-card-field">
+                <label for="phone">Phone Number</label>
+                <input type="phone" name="phone"  />
+            </div>
+            <div class="form-card-field">
+                <label for="email">Email Address</label>
+                <input type="email" name="email"  />
+            </div>
+            <button type="button" data-card-button-next>Next</button>
+        </div>
+        <div class="form-card hidden" data-form-card>
+            <h3 class="form-card-title" data-card-title>Account Credentials</h3>
+            <div class="form-card-field">
+                <label for="username">Username</label>
+                <input type="text" name="username"  />
+            </div>
+            <div class="form-card-field">
+                <label for="password">Password</label>
+                <input type="password" name="password"  />
+            </div>
+            <div class="form-card-field">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" name="confirmPassword"  />
+            </div>
+            <button type="button" data-card-button-previous>Previous</button>
+            <button type="button" data-card-button-next>Next</button>
+        </div>
+        <div class="form-card hidden" data-form-card>
+            <h3 class="form-card-title" data-card-title>Bio</h3>
+            <div class="form-card-field">
+                <label for="bio">Bio</label>
+                <textarea name="bio"></textarea>
+            </div>
+            <button type="button" data-card-button-previous>Previous</button>
+            <button type="submit" data-card-button-next>Submit</button>
+        </div>
+    </form>
+</body>
+</html>

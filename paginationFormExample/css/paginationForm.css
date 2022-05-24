@@ -1,0 +1,136 @@
+
+.multi-card-form {
+	max-width: 40%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.form-card {
+	border: 1px solid black;
+	border-radius: .25rem;
+	padding: .25em;
+}
+
+.active {
+	/* this needs to be here */
+}
+
+.card-sol {
+	animation: slide-out-left 500ms cubic-bezier(0.22, 0.47, 0.8, 0.86) forwards;
+}
+
+.card-sor {
+	animation: slide-out-right 500ms cubic-bezier(0.22, 0.47, 0.8, 0.86) forwards;
+}
+
+.card-sil {
+	animation: slide-in-left 750ms cubic-bezier(0.34, 0.29, 0.54, 1.32) forwards;
+}
+
+.card-sir {
+	animation: slide-in-right 750ms cubic-bezier(0.34, 0.29, 0.54, 1.32) forwards;
+}
+
+.hidden {
+	display: none;
+}
+
+.form-card-title {
+	text-align: center;
+}
+
+.form-card > button {
+	margin: 0px auto;
+	margin-top: .5em;
+	width: 8em;
+}
+
+.form-card-field {
+	display: flex;
+	flex-direction: column;
+	gap: .25em;
+	margin-bottom: .5em;
+}
+
+.form-card-field > input {
+	border-radius: .25em;
+	border: 1px solid black;
+	font-size: 1rem;
+	padding: .15em;
+}
+
+.form-card-field > label {
+	font-weight: bold;
+}
+
+@keyframes slide-in-left {
+	0% {
+		transform: translateX(-200%);
+		opacity: .5;
+	}
+	
+	100% {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+@keyframes slide-in-right {
+	0% {
+		transform: translateX(200%);
+		opacity: 0;
+	}
+	100% {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+@keyframes slide-out-left {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-200%);
+	}
+}
+
+@keyframes slide-out-right {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(200%);
+	}
+}
+
+
+/* Pagination */
+.pagination-wrapper {
+	margin: 5px auto;
+	padding: .25em;
+	max-width: 40%;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+}
+
+.pagination-cell {
+	border: 1px solid grey;
+	font-size: 1em;
+	text-align: center;
+	padding: .25em;
+	border-radius: .2em;
+	flex-grow: 0;
+}
+.cell-complete {
+	background-color: green;
+}
+.pagination-line {
+	background-color: gray;
+	height: .25em;
+	flex-grow: 1;
+}
+.line-complete {
+	background-color: green;
+}

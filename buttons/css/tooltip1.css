@@ -1,0 +1,30 @@
+.tooltip-1 {
+    --arrow-width: 10px;
+
+    position: relative;
+}
+
+.tooltip-1:hover::after {
+    content: "";
+    position: absolute;
+    left: calc(50% - var(--arrow-width) / 2);
+    top: calc(-1 * var(--arrow-width));
+    width: var(--arrow-width);
+    height: var(--arrow-width);
+    border: var(--arrow-width) solid transparent;
+    border-top-color: black;
+}
+
+.tooltip-1:hover::before {
+    content: attr(data-tooltip-text);
+    font-size: 75%;
+    position: absolute;
+    top: calc(-1 * var(--arrow-width));
+    left: 50%;
+    background-color: black;
+    color: white;
+    padding: 2px;
+    border-radius: 5px;
+    max-width: 100%;
+    height: fit-content;
+}
