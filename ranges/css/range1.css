@@ -1,7 +1,14 @@
 .range {
-    --range-container-width: 200px;
+    /**
+    Some values for the range. Changing these will allow
+    related values to scale accordingly.
+    */
+    --range-container-width: 300px;
     --range-maxmin-width: 50px;
+    --range-thumb-width: 10px;
+    --range-val-width: 35px;
 
+    box-sizing: border-box;
     width: var(--range-container-width);
     height: 3em;
     margin-top: 50px;
@@ -14,22 +21,32 @@
     border-radius: 1em;
     z-index: 1;
 }
+.range *, .range *:before, .range *:after {
+    box-sizing: inherit;
+}
 
 .range-value {
     color: white;
     text-align: center;
-    width: 50px;
+    width: var(--range-val-width);
+    height: var(--range-val-width);
     position: absolute;
-    top: -30px;
-    left: calc((var(--range-container-width) / 2) - (50 / 2));
+    top: calc(var(--range-val-width) / -2);
+    left: calc((var(--range-container-width) / 2) - (var(--range-val-width) / 2));
+    transform-origin: bottom;
+    transform: scale(0);
+    transition: transform ease-in 500ms;
+}
+.opened {
+    transform: scale(1);
 }
 .range-value::after {
     content: "";
     position: absolute;
-    left: calc(50% - 25px);
-    top: -20px;
-    width: 50px;
-    height: 50px;
+    left: 0;
+    top: -25%;
+    width: var(--range-val-width);
+    height: var(--range-val-width);
     background-color: rgb(71, 78, 203);
     border: 3px solid white;
     transform: rotate(45deg);
@@ -46,7 +63,7 @@
 }
 .range input::-webkit-slider-thumb {
     appearance: none;
-    width: 10px;
+    width: var(--range-thumb-width);
     height: 18px;
     border: 1px solid white;
     border-radius: 2px;
@@ -57,16 +74,18 @@
     content: attr(min);
     position: absolute;
     width: var(--range-maxmin-width);
-    left: 10%;
+    left: 0;
     top: 25%;
     color: white;
     font-size: 1.25em;
+    text-align: center;
 }
 .range input::after {
     content: attr(max);
     position: absolute;
     width: var(--range-maxmin-width);
-    left: calc(var(--range-container-width) - var(--range-maxmin-width));
+    right: 0;
+    text-align: center;
     top: 25%;
     color: white;
     font-size: 1.25em;
